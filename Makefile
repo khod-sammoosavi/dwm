@@ -23,6 +23,7 @@ clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 
 dist: clean
+	rm -rf /usr/share/xsessions/dwm.desktop
 	mkdir -p dwm-${VERSION}
 	cp -R LICENSE Makefile README config.def.h config.mk\
 		dwm.1 drw.h util.h ${SRC} dwm.png transient.c dwm-${VERSION}
@@ -31,6 +32,8 @@ dist: clean
 	rm -rf dwm-${VERSION}
 
 install: all
+	mkdir -p /usr/share/xsessions/
+	cp dwm.desktop /usr/share/xsessions/
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
