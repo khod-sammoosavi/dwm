@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=dwm
+Icon=/usr/share/dwm/dwm.png
 Comment=Dynamic Window Manager
-Exec=...
-TryExec=...
+Exec=/usr/share/dwm/scripts/run.sh
+TryExec=/usr/share/dwm/scripts/run.sh
 Type=Application
