@@ -3,6 +3,9 @@
 # setup home directory
 sh /usr/share/dwm/scripts/install-home.sh
 
+# setup keyboard layouts
+sh /home/$USER/.dwm/keylayouts.sh &
+
 # setup monitors
 sh /home/$USER/.dwm/monitors.sh &
 

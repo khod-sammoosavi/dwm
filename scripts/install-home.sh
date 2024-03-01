@@ -19,3 +19,8 @@ if [ ! -f $dwm/autostart.sh ];then
   touch $dwm/autostart.sh
   chmod +x $dwm/autostart.sh
 fi
+
+if [ ! -f $dwm/keylayouts.sh ];then
+  touch $dwm/keylayouts.sh
+  chmod +x $dwm/keylayouts.sh
+fi
