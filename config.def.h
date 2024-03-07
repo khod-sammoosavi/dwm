@@ -6,6 +6,15 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const unsigned int baralpha = 70;
+static const unsigned int borderalpha = 70;
+
+static const unsigned int alphas[][3]      = {
+    /*               fg      bg        border*/
+    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+    [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+};
+
 
 /* fonts */
 static const char monospace[]       = "monospace:size=11.5:style=Medium:autohint=true";
