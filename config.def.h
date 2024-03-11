@@ -55,6 +55,8 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+#include "fibonacci.c"
+
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -65,6 +67,8 @@ static const Layout layouts[] = {
 	{ "[C]",      centeredmaster },
 	{ ">C>",      centeredfloatingmaster },
 	{ "[D]",      deck },
+ 	{ "[F]",      spiral },
+ 	{ ">F>",      dwindle },
 };
 
 /* key definitions */
@@ -103,13 +107,15 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_n,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_b,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY,                       XK_d,      setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[8]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[9]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
