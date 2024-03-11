@@ -56,6 +56,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 #include "fibonacci.c"
+#include "movestack.c"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -97,13 +98,19 @@ static const Key keys[] = {
 	{ ALTKEY,                       XK_Down,   spawn, 	   {.v = downvol } },
 	{ ALTKEY,                       XK_Up,     spawn,      	   {.v = upvol   } },
 	{ MODKEY|ShiftMask,             XK_t,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_l,      movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_s,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_v,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_h,      focusstack,     {.f = +1 } },
+	{ MODKEY,                       XK_l,      focusstack,     {.f = -1 } },
+	{ MODKEY|ShiftMask,             XK_s,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_v,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
