@@ -1,13 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const unsigned int baralpha = 70;
+static const char buttonbar[]         = "󰣇";
+static const int showbar              = 1;        /* 0 means no bar */
+static const int topbar               = 1;        /* 0 means bottom bar */
+static const int user_bh              = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const unsigned int baralpha    = 70;
 static const unsigned int borderalpha = 70;
+static const unsigned int borderpx    = 1;        /* border pixel of windows */
+static const unsigned int snap        = 32;       /* snap pixel */
 
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -147,6 +148,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
+	{ ClkButton,		0,		Button1,	spawn,		{.v = dmenucmd } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
