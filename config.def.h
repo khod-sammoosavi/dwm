@@ -21,7 +21,8 @@ static const unsigned int alphas[][3]      = {
 /* fonts */
 static const char monospace[]       = "monospace:size=11.5:style=Medium:autohint=true";
 static const char nerdfont[]        = "SymbolsNerdFont-Regular:size=11.5:style=Medium:autohint=true";
-static const char *fonts[]          = { monospace, nerdfont };
+static const char persian_arabic_font[]        = "XM Yekan:size=11.5:style=Medium:autohint=true";
+static const char *fonts[]          = { monospace ,persian_arabic_font , nerdfont };
 
 /* theme */
 static const char black[]       = "#000000";
