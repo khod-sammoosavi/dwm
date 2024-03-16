@@ -20,5 +20,8 @@ sleep 4 && sh /home/$USER/.dwm/autostart.sh || setup_home_dirs && break &
 # dynamic change background
 nitrogen --restore &
 
+# statusbar
+slstatus &
+
 # running dwm
 while type dwm >> /dev/null; do dwm && continue || break; done
