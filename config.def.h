@@ -5,9 +5,9 @@ static const char buttonbar[]         = "󰣇";
 static const int showbar              = 1;        /* 0 means no bar */
 static const int topbar               = 1;        /* 0 means bottom bar */
 static const int user_bh              = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const unsigned int baralpha    = 70;
-static const unsigned int gappx       = 10;        /* gaps between windows */
-static const unsigned int borderalpha = 70;
+static const unsigned int baralpha    = 0xc0;
+static const unsigned int borderalpha = OPAQUE;
+static const unsigned int gappx       = 8;        /* gaps between windows */
 static const unsigned int borderpx    = 1;        /* border pixel of windows */
 static const unsigned int snap        = 32;       /* snap pixel */
 
@@ -116,7 +116,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY,           		XK_Up,     setcfact,       {.f = +0.25} },
 	{ MODKEY,  	                XK_Down,   setcfact,       {.f = -0.25} },
-	{ MODKEY,                       XK_space,  zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
