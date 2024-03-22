@@ -1,0 +1,84 @@
+configuration {
+  font: "monospace 11.5";
+
+  drun {
+    display-name: "";
+  }
+
+  timeout {
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #000000;
+  bg-alt: #111111;
+  fg: #ffffff;
+  fg-alt: #aaaaaa;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  width: 700px;
+  border: 1px;
+  border-color: #ffffff;
+  border-radius: 8px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: #1e1e1e;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+  padding: 8px 8px 8px 8px;
+}
+
+element {
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  size: 20px;
+  padding: 10px 10px;
+}
+
+element-icon selected {
+  size: 20px;
+  padding: 10px 10px;
+  background-color: #1e1e1e;
+  border-radius: 0px 0px 0px 0px;
+}
+
+element-text {
+  padding: 8px 0px;
+}
+
+element-text selected {
+  text-color: #eeeeee;
+  background-color: #1e1e1e;
+  border-radius: 0px 0px 0px 0px;
+}
