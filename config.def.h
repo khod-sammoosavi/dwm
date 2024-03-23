@@ -89,15 +89,14 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *termcmd[]  = { "st", NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", monospace, NULL };
+static const char *spotdark[] = { "rofi", "-show", "drun", "-theme", "/usr/share/dwm/launcher/spotdark.rasi", NULL };
 static const char *upvol[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
  
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = spotdark } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ ALTKEY,                       XK_Down,   spawn, 	   {.v = downvol } },
 	{ ALTKEY,                       XK_Up,     spawn,      	   {.v = upvol   } },
@@ -157,7 +156,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkButton,		0,		Button1,	spawn,		{.v = dmenucmd } },
+	{ ClkButton,		0,		Button1,	spawn,		{.v = spotdark } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
