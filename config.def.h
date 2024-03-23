@@ -89,7 +89,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *spotdark[] = { "rofi", "-show", "drun", "-theme", "/usr/share/dwm/launcher/spotdark.rasi", NULL };
 static const char *upvol[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
@@ -97,8 +97,8 @@ static const char *downvol[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = spotdark } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ ALTKEY,                       XK_Down,   spawn, 	   {.v = downvol } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ ALTKEY,                       XK_Down,   spawn, 	       {.v = downvol } },
 	{ ALTKEY,                       XK_Up,     spawn,      	   {.v = upvol   } },
 	{ MODKEY|ShiftMask,             XK_t,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = +1 } },
@@ -113,8 +113,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
-	{ MODKEY,           		XK_Up,     setcfact,       {.f = +0.25} },
-	{ MODKEY,  	                XK_Down,   setcfact,       {.f = -0.25} },
+	{ MODKEY,           		        XK_Up,     setcfact,       {.f = +0.25} },
+	{ MODKEY,  	                    XK_Down,   setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
@@ -125,7 +125,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[6]} },
-	{ MODKEY,                       XK_d,      setlayout,      {.v = &layouts[7]} },
+  { MODKEY,                       XK_d,      setlayout,      {.v = &layouts[7]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[8]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[9]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[10]} },
@@ -156,7 +156,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkButton,		0,		Button1,	spawn,		{.v = spotdark } },
+	{ ClkButton,		        0,	          	Button1,      	spawn,		      {.v = spotdark } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
