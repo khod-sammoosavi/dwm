@@ -91,7 +91,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *spotdark[] = { "rofi", "-show", "drun", "-theme", "/usr/share/dwm/launcher/spotdark.rasi", NULL };
-static const char *power[]    = { "sh /usr/share/dwm/power/power.sh", NULL };
+static const char *power[]    = { "sh", "/usr/share/dwm/power/power.sh", NULL };
 static const char *upvol[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
  

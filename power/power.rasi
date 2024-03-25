@@ -39,7 +39,11 @@ window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
-    fullscreen:                  true;
+    width:                       1920px;
+    height:                      1080px;
+    x-offset:                    0px;
+    y-offset:                    30px;
+    fullscreen:                  false;
     cursor:                      "default";
     background-color:            var(background-window);
 }
