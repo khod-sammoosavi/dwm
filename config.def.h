@@ -91,12 +91,14 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *spotdark[] = { "rofi", "-show", "drun", "-theme", "/usr/share/dwm/launcher/spotdark.rasi", NULL };
+static const char *power[]    = { "sh /usr/share/dwm/power/power.sh", NULL };
 static const char *upvol[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
  
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = spotdark } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = power } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ ALTKEY,                       XK_Down,   spawn, 	       {.v = downvol } },
 	{ ALTKEY,                       XK_Up,     spawn,      	   {.v = upvol   } },
@@ -149,7 +151,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} }, // refresh or reload dwm
 };
 
 /* button definitions */

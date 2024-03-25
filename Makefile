@@ -36,7 +36,7 @@ install: all
 	mkdir -p /usr/share/xsessions/
 	cp dwm.desktop /usr/share/xsessions/
 	mkdir -p /usr/share/dwm
-	cp -R dwm.png README scripts/ launcher/ /usr/share/dwm
+	cp -R dwm.png README scripts/ launcher/ power/ /usr/share/dwm
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
