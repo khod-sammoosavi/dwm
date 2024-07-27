@@ -4,8 +4,8 @@
 static const char buttonbar[]         = "󰣇";
 static const int showbar              = 1;        /* 0 means no bar */
 static const int topbar               = 1;        /* 0 means bottom bar */
-static const int user_bh              = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const unsigned int baralpha    = 0xc0;
+static const int user_bh              = 35;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const unsigned int baralpha    = 130;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int gappx       = 8;        /* gaps between windows */
 static const unsigned int borderpx    = 1;        /* border pixel of windows */
@@ -19,9 +19,9 @@ static const unsigned int alphas[][3]      = {
 
 
 /* fonts */
-static const char monospace[]       = "monospace:size=11.5:style=Medium:autohint=true";
+static const char monospace[]       = "Source Code Pro:size=11.5:style=Medium:autohint=true";
 static const char nerdfont[]        = "SymbolsNerdFont-Regular:size=11.5:style=Medium:autohint=true";
-static const char persian_arabic_font[]        = "XM Yekan:size=11.5:style=Medium:autohint=true";
+static const char persian_arabic_font[]        = "Vazirmatn:size=11.5:style=Medium:autohint=true";
 static const char *fonts[]          = { monospace ,persian_arabic_font , nerdfont };
 
 /* theme */
@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
+static const char *tags[] = { "dev", "web", "sys", "doc", "chat", "media" };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
